@@ -20,9 +20,9 @@ Returns a L<Path::Tiny> object for the root of the Vcpkg install.
 
 sub root
 {
-  if(defined $ENV{PERL_WIN32_VCPKG})
+  if(defined $ENV{PERL_WIN32_VCPKG_ROOT})
   {
-    my $root = Path::Tiny->new($ENV{PERL_WIN32_VCPKG});
+    my $root = Path::Tiny->new($ENV{PERL_WIN32_VCPKG_ROOT});
     if(-d $root && -f $root->child('.vcpkg-root'))
     {
       return $root;
@@ -52,7 +52,7 @@ sub root
 
 =over 4
 
-=item C<PERL_WIN32_VCPKG>
+=item C<PERL_WIN32_VCPKG_ROOT>
 
 If set, this will be used for the Vcpkg root instead of automatic detection logic.
 

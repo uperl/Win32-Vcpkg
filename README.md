@@ -14,7 +14,7 @@ Returns a [Path::Tiny](https://metacpan.org/pod/Path::Tiny) object for the root 
 
 # ENVIRONMENT
 
-- `PERL_WIN32_VCPKG`
+- `PERL_WIN32_VCPKG_ROOT`
 
     If set, this will be used for the Vcpkg root instead of automatic detection logic.
 
