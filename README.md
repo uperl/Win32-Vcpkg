@@ -10,7 +10,7 @@ Interface to Microsoft Vcpkg
 my $path = Win32::Vcpkg->root;
 ```
 
-Returns a [Path::Tiny](https://metacpan.org/pod/Path%3A%3ATiny) object for the root of the Vcpkg install.
+Returns a [Path::Tiny](https://metacpan.org/pod/Path::Tiny) object for the root of the Vcpkg install.
 
 # ENVIRONMENT
 
