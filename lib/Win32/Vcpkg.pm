@@ -30,7 +30,11 @@ sub root
   }
 
   {
-    my $vcpkg_path_txt = Path::Tiny->new("~/AppData/Local/vcpkg/vcpkg.path.txt");
+    my $vcpkg_path_txt = Path::Tiny->new(
+      $^O eq 'MSWin32'
+      ? "~/AppData/Local/vcpkg/vcpkg.path.txt"
+      : "~/.vcpkg/vcpkg.path.txt",
+    );
     if(-r $vcpkg_path_txt)
     {
       my $path = $vcpkg_path_txt->slurp;  # FIXME: what is the encoding of this file?
