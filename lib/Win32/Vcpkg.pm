@@ -43,7 +43,7 @@ sub root
     }
   }
 
-  return;
+  return ();
 }
 
 1;
