@@ -12,7 +12,7 @@ my $path = Win32::Vcpkg->root;
 
 Returns a [Path::Tiny](https://metacpan.org/pod/Path::Tiny) object for the root of the Vcpkg install.
 
-## triplet
+## default\_triplet
 
 ```perl
 my $triplet = Win32::Vcpkg->triplet;

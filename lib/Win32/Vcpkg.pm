@@ -50,7 +50,7 @@ sub root
   return ();
 }
 
-=head2 triplet
+=head2 default_triplet
 
  my $triplet = Win32::Vcpkg->triplet;
 
@@ -64,7 +64,7 @@ my %default_triplet = (
   'darwin'  => 'x64-osx',
 );
 
-sub triplet
+sub default_triplet
 {
   $ENV{VCPKG_DEFAULT_TRIPLET} || $default_triplet{$^O} || die "no default triplet for $^O";
 }
