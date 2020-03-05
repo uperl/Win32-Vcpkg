@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use 5.008001;
 use Path::Tiny ();
+use Config;
 
 # ABSTRACT: Interface to Microsoft Vcpkg
 # VERSION
@@ -50,9 +51,43 @@ sub root
   return ();
 }
 
+=head2 perl_triplet
+
+ my $triplet = Win32::Vcpkg->perl_triplet;
+
+=cut
+
+my $perl_triplet;
+
+sub perl_triplet
+{
+  return $perl_triplet if $perl_triplet;
+
+  if($Config{archname} =~ /^x86_64-linux/)
+  {
+    return $perl_triplet = 'x64-linux';
+  }
+  elsif($^O eq 'darwin' && $Config{ptrsize} == 8)
+  {
+    return $perl_triplet = 'x64-osx';
+  }
+  elsif($^O eq 'MSWin32')
+  {
+    if($Config{ptrsize} == 4)
+    {
+      return $perl_triplet = 'x86-windows';
+    }
+    elsif($Config{ptrsize} == 8)
+    {
+      return $perl_triplet = 'x64-windows'
+    }
+  }
+  die "no triplet for this build of Perl";
+}
+
 =head2 default_triplet
 
- my $triplet = Win32::Vcpkg->triplet;
+ my $triplet = Win32::Vcpkg->default_triplet;
 
 Returns the default triplet for the current environment.
 
