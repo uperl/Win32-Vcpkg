@@ -2,12 +2,14 @@ use Test2::V0 -no_srand => 1;
 use Win32::Vcpkg;
 
 my $root = Win32::Vcpkg->root;
+my $triplet = Win32::Vcpkg->triplet;
 
 diag '';
 diag '';
 diag '';
 
-diag "Win32::Vcpkg->root = @{[ defined $root ? $root->canonpath : 'undefined' ]}";
+diag "Win32::Vcpkg->root    = @{[ defined $root ? $root->canonpath : 'undefined' ]}";
+diag "Win32::Vcpkg->triplet = @{[ $triplet ]}";
 
 diag '';
 diag '';

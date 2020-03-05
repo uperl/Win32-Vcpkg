@@ -50,6 +50,25 @@ sub root
   return ();
 }
 
+=head2 triplet
+
+ my $triplet = Win32::Vcpkg->triplet;
+
+Returns the default triplet for the current environment.
+
+=cut
+
+my %default_triplet = (
+  'MSWin32' => 'x86-windows',
+  'linux'   => 'x64-linux',
+  'darwin'  => 'x64-osx',
+);
+
+sub triplet
+{
+  $ENV{VCPKG_DEFAULT_TRIPLET} || $default_triplet{$^O} || die "no default triplet for $^O";
+}
+
 1;
 
 =head1 ENVIRONMENT
