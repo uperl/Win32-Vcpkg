@@ -36,6 +36,13 @@ jobs:
           perl -V > perlversion.txt
           dir perlversion.txt
 
+      - name: Install Vcpkg
+        run: |
+          git clone https://github.com/Microsoft/vcpkg.git C:/vcpkg
+          cd \vcpkg
+          .\bootstrap-vcpkg.bat
+          vcpkg integrate install
+
       - name: Cache CPAN modules
         uses: actions/cache@v1
         with:
