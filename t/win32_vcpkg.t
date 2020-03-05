@@ -10,7 +10,7 @@ diag '';
 diag '';
 
 diag "Win32::Vcpkg->root            = @{[ defined $root ? $root->canonpath : 'undefined' ]}";
-diag "Win32::Vcpkg->perl_triplet    = @{[ $default_triplet ]}";
+diag "Win32::Vcpkg->perl_triplet    = @{[ $perl_triplet ]}";
 diag "Win32::Vcpkg->default_triplet = @{[ $default_triplet ]}";
 
 diag '';
