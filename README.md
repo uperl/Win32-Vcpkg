@@ -2,6 +2,20 @@
 
 Interface to Microsoft Vcpkg
 
+# SYNOPSIS
+
+```perl
+use Win32::Vcpkg;
+my $root = Win32::Vcpkg->root;
+my $triplet = Win32::Vcpkg->perl_triplet;
+```
+
+# DESCRIPTION
+
+This module provides an interface for finding and using `Vcpkg` packages.  `Vcpkg` is a Visual C++
+library package manager, and as such is useful in building XS and FFI extensions for Visual C++ builds
+of Perl.
+
 # METHODS
 
 ## root
@@ -33,6 +47,10 @@ Returns the default triplet for the current environment.
 - `PERL_WIN32_VCPKG_ROOT`
 
     If set, this will be used for the Vcpkg root instead of automatic detection logic.
+
+# SEE ALSO
+
+- [Win32:Vcpkg::Package](Win32:Vcpkg::Package)
 
 # AUTHOR
 
