@@ -9,6 +9,18 @@ use Config;
 # ABSTRACT: Interface to Microsoft Vcpkg
 # VERSION
 
+=head1 SYNOPSIS
+
+ use Win32::Vcpkg;
+ my $root = Win32::Vcpkg->root;
+ my $triplet = Win32::Vcpkg->perl_triplet;
+
+=head1 DESCRIPTION
+
+This module provides an interface for finding and using C<Vcpkg> packages.  C<Vcpkg> is a Visual C++
+library package manager, and as such is useful in building XS and FFI extensions for Visual C++ builds
+of Perl.
+
 =head1 METHODS
 
 =head2 root
@@ -65,6 +77,8 @@ sub perl_triplet
 {
   return $perl_triplet if $perl_triplet;
 
+  return $perl_triplet = $ENV{VCPKG_DEFAULT_TRIPLET} if defined $ENV{VCPKG_DEFAULT_TRIPLET};
+
   if($Config{archname} =~ /^x86_64-linux/)
   {
     return $perl_triplet = 'x64-linux';
@@ -115,6 +129,14 @@ sub default_triplet
 =item C<PERL_WIN32_VCPKG_ROOT>
 
 If set, this will be used for the Vcpkg root instead of automatic detection logic.
+
+=back
+
+=head1 SEE ALSO
+
+=over 4
+
+=item L<Win32:Vcpkg::Package>
 
 =back
 
