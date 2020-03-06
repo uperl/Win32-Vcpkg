@@ -18,6 +18,8 @@ Returns a [Path::Tiny](https://metacpan.org/pod/Path::Tiny) object for the root 
 my $triplet = Win32::Vcpkg->perl_triplet;
 ```
 
+Returns the triplet needed for linking against Perl.
+
 ## default\_triplet
 
 ```perl

@@ -55,6 +55,8 @@ sub root
 
  my $triplet = Win32::Vcpkg->perl_triplet;
 
+Returns the triplet needed for linking against Perl.
+
 =cut
 
 my $perl_triplet;
