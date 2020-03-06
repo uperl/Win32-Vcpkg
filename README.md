@@ -12,10 +12,16 @@ my $path = Win32::Vcpkg->root;
 
 Returns a [Path::Tiny](https://metacpan.org/pod/Path::Tiny) object for the root of the Vcpkg install.
 
+## perl\_triplet
+
+```perl
+my $triplet = Win32::Vcpkg->perl_triplet;
+```
+
 ## default\_triplet
 
 ```perl
-my $triplet = Win32::Vcpkg->triplet;
+my $triplet = Win32::Vcpkg->default_triplet;
 ```
 
 Returns the default triplet for the current environment.
