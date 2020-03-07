@@ -88,6 +88,8 @@ sub new
   }
 
   bless {
+    name    => $args{_name},
+    version => $args{_version},
     root    => $root,
     triplet => $triplet,
     cflags  => $cflags,
@@ -96,6 +98,26 @@ sub new
 }
 
 =head1 ATTRIBUTES
+
+=head2 name
+
+ my $name = $package->name;
+
+Returns the name of the package, if known.
+
+=cut
+
+sub name { shift->{name} }
+
+=head2 version
+
+ my $version = $package->version;
+
+Returns the version of the package, if known.
+
+=cut
+
+sub version { shift->{version} }
 
 =head2 root
 
@@ -144,6 +166,8 @@ sub libs { shift->{libs} }
 =over 4
 
 =item L<Win32:Vcpkg>
+
+=item L<Win32::Vcpkg::List>
 
 =back
 
