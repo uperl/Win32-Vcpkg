@@ -136,6 +136,8 @@ If set, this will be used for the Vcpkg root instead of automatic detection logi
 
 =over 4
 
+=item L<Win32:Vcpkg::List>
+
 =item L<Win32:Vcpkg::Package>
 
 =back
