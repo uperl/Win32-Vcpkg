@@ -53,7 +53,6 @@ subtest 'basic' => sub {
         },
       );
 
-      $DB::single = 1;
       is(
         $foo_lib,
         object {
