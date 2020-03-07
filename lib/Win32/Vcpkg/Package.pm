@@ -12,7 +12,7 @@ use Path::Tiny ();
 =head1 SYNOPSIS
 
  use Win32::Vcpkg::Package;
-
+ 
  my $package = Win32::Vcpkg::Package->new(
    lib => ['foo','bar'],
  );
@@ -62,12 +62,12 @@ If true, link against the debug version of the libraries.
 sub new
 {
   my($class, %args) = @_;
-  
+
   my $root    = defined $args{root} ? Path::Tiny->new($args{root}) : Win32::Vcpkg->root;
   my $triplet = $args{triplet} || Win32::Vcpkg->perl_triplet;
   my @lib     = @{ $args{lib} || [] };
   my $debug   = $args{debug} || 0;
-  
+
   my $cflags = "-I@{[ $root->child('installed', $triplet, 'include') ]}";
 
   my $libdir = $root->child('installed', $triplet, 'lib');

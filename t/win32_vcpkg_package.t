@@ -19,20 +19,20 @@ subtest 'basic' => sub {
   );
 
   foreach my $debug (0,1)
-  {  
+  {
     subtest "debug = $debug" => sub {
       my $package = Win32::Vcpkg::Package->new(
         lib   => ['foo'],
         debug => $debug,
       );
-      
+
       isa_ok $package->root, 'Path::Tiny';
 
       note "root    = ", $package->root;
       note "triplet = ", $package->triplet;
       note "cflags  = ", $package->cflags;
       note "libs    = ", $package->libs;
-      
+
       is(
         $package,
         object {
@@ -64,12 +64,12 @@ subtest 'basic' => sub {
   }
 
   subtest 'not found' => sub {
-    
+
     like
       dies { Win32::Vcpkg::Package->new( lib => ['bar'] ) },
       qr/unable to find bar/,
     ;
-    
+
   };
 };
 
