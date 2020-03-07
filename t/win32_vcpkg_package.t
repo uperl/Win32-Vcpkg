@@ -5,22 +5,22 @@ use Path::Tiny ();
 
 subtest 'basic' => sub {
 
+  my $mock = mock 'Win32::Vcpkg' => (
+    override => [
+      root => sub {
+        Path::Tiny->new('corpus', 'root1')->absolute;
+      },
+    ],
+    override => [
+      perl_triplet => sub {
+        'x64-windows',
+      },
+    ],
+  );
+
   foreach my $debug (0,1)
   {  
     subtest "debug = $debug" => sub {
-      my $mock = mock 'Win32::Vcpkg' => (
-        override => [
-          root => sub {
-            Path::Tiny->new('corpus', 'root1')->absolute;
-          },
-        ],
-        override => [
-          perl_triplet => sub {
-            'x64-windows',
-          },
-        ],
-      );
-
       my $package = Win32::Vcpkg::Package->new(
         lib   => ['foo'],
         debug => $debug,
