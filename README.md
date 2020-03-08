@@ -44,9 +44,17 @@ Returns the default triplet for the current environment.
 
 # ENVIRONMENT
 
+- `VCPKG_DEFAULT_TRIPLET`
+
+    This is Vcpkg's default triplet.  If set this will override platform detection for the default triplet.
+
 - `PERL_WIN32_VCPKG_ROOT`
 
     If set, this will be used for the Vcpkg root instead of automatic detection logic.
+
+- `PERL_WIN32_VCPKG_DEBUG`
+
+    If set to true, will link against debug libraries.
 
 # SEE ALSO
 

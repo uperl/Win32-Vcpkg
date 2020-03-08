@@ -132,7 +132,7 @@ sub search
 {
   my($self, $name, %options) = @_;
   my $triplet = $options{triplet} || Win32::Vcpkg->perl_triplet;
-  my $debug   = $options{debug};
+  my $debug   = defined $options{debug} ? $options{debug} : $ENV{PERL_WIN32_VCPKG_DEBUG};
 
   foreach my $status (@{ $self->{status} })
   {
