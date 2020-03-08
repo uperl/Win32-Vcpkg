@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}},
 
 {{$NEXT}}
+
+0.02      2020-03-07 18:40:58 -0700
   - Add PERL_WIN32_VCPKG_DEBUG env var to override default
     for debug.
 
