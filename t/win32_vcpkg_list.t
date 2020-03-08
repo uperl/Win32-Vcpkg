@@ -3,6 +3,8 @@ use Win32::Vcpkg;
 use Win32::Vcpkg::List;
 use Path::Tiny ();
 
+delete $ENV{PERL_WIN32_VCPKG_DEBUG};
+
 subtest 'basic' => sub {
 
   my $mock = mock 'Win32::Vcpkg' => (

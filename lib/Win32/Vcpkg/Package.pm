@@ -66,7 +66,7 @@ sub new
   my $root    = defined $args{root} ? Path::Tiny->new($args{root}) : Win32::Vcpkg->root;
   my $triplet = $args{triplet} || Win32::Vcpkg->perl_triplet;
   my @lib     = @{ $args{lib} || [] };
-  my $debug   = $args{debug} || 0;
+  my $debug   = defined $args{debug} ? $args{debug} : $ENV{PERL_WIN32_VCPKG_DEBUG};
 
   my $cflags = "-I@{[ $root->child('installed', $triplet, 'include') ]}";
 
