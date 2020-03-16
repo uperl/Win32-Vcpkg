@@ -196,7 +196,7 @@ sub search
 
 =over 4
 
-=item L<Win32:Vcpkg>
+=item L<Win32::Vcpkg>
 
 =item L<Win32::Vcpkg::Package>
 

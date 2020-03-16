@@ -144,9 +144,9 @@ If set to true, will link against debug libraries.
 
 =over 4
 
-=item L<Win32:Vcpkg::List>
+=item L<Win32::Vcpkg::List>
 
-=item L<Win32:Vcpkg::Package>
+=item L<Win32::Vcpkg::Package>
 
 =back
 
