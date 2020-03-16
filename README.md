@@ -58,8 +58,8 @@ Returns the default triplet for the current environment.
 
 # SEE ALSO
 
-- [Win32:Vcpkg::List](Win32:Vcpkg::List)
-- [Win32:Vcpkg::Package](Win32:Vcpkg::Package)
+- [Win32::Vcpkg::List](https://metacpan.org/pod/Win32::Vcpkg::List)
+- [Win32::Vcpkg::Package](https://metacpan.org/pod/Win32::Vcpkg::Package)
 
 # AUTHOR
 
