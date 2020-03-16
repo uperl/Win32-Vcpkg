@@ -43,6 +43,14 @@ sub new
 
   my $root = defined $args{root} ? Path::Tiny->new($args{root}) : Win32::Vcpkg->root;
 
+  my $vcpkg_exe = $root->child('vcpkg.exe');
+  if(-x $vcpkg_exe)
+  {
+    # TODO: this is a bit flaky, the root directory might
+    # not have vcpkg.exe.
+    `$vcpkg_exe list`;  # force a rebuild of the status file
+  }
+
   my $status = $root->child('installed', 'vcpkg', 'status');
 
   my @status;
