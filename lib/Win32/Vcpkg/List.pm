@@ -139,7 +139,8 @@ sub search
     next unless $status->{Architecture} eq $triplet
     &&          $status->{Package} eq $name
     &&          !defined $status->{Feature}
-    &&          $status->{Version};
+    &&          $status->{Version}
+    &&          $status->{Status} eq 'install ok installed';
 
     my $version = $status->{Version};
     my $file_list = $self->root->child('installed','vcpkg','info',sprintf("%s_%s_%s.list", $name, $version, $triplet));
