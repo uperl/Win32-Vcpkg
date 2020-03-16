@@ -128,6 +128,10 @@ L<Win32::Vcpkg::Package>.  If no package is found then C<undef> is returned.  Op
 The architecture triplet to search under.  The C<Vcpkg> triplet.  By default this
 is what C<perl_triplet> from L<Win32::Vcpkg> returns.
 
+=item include
+
+Any header subdirectory names.
+
 =item debug
 
 If set to true, the C<$package> object will use debug libraries.
@@ -176,6 +180,7 @@ sub search
         root     => $self->root,
         triplet  => $triplet,
         debug    => $debug,
+        include  => $options{include},
         lib      => \@lib,
       );
     }
