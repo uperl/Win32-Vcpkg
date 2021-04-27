@@ -1,4 +1,4 @@
-# Win32::Vcpkg [![Build Status](https://secure.travis-ci.org/plicease/Win32-Vcpkg.png)](http://travis-ci.org/plicease/Win32-Vcpkg) ![windows](https://github.com/plicease/Win32-Vcpkg/workflows/windows/badge.svg)
+# Win32::Vcpkg ![linux](https://github.com/plicease/Win32-Vcpkg/workflows/linux/badge.svg) ![windows](https://github.com/plicease/Win32-Vcpkg/workflows/windows/badge.svg)
 
 Interface to Microsoft Vcpkg
 
