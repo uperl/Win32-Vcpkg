@@ -2,7 +2,7 @@ package Win32::Vcpkg::List;
 
 use strict;
 use warnings;
-use 5.008001;
+use 5.008004;
 use Win32::Vcpkg;
 use Path::Tiny ();
 use Storable qw( dclone );
