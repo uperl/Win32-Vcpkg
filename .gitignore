@@ -2,4 +2,7 @@ Win32-Vcpkg-*
 /.build/
 *.swp
 
-
+/Win32-Vcpkg-*
+/.build
+*.old
+*.orig
